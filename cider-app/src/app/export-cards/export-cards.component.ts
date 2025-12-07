@@ -29,10 +29,10 @@ export class ExportCardsComponent implements OnInit {
     { name: 'Individual Images', value: ExportCardsComponent.SINGULAR_EXPORT}
   ];
   private static readonly PAPER_OPTIONS: PaperType[] = [
+    { name: 'A4 (Portrait)', width: 8.27, height: 11.69, orientation: 'portrait', mirrorBacksX: true, mirrorBacksY: false}, 
+    { name: 'A4 (Landscape)', width: 8.27, height: 11.69, orientation: 'landscape', mirrorBacksX: false, mirrorBacksY: true}, 
     { name: 'US Letter (Landscape)', width: 8.5, height: 11, orientation: 'landscape', mirrorBacksX: false, mirrorBacksY: true}, 
     { name: 'US Letter (Portrait)', width: 8.5, height: 11, orientation: 'portrait', mirrorBacksX: true, mirrorBacksY: false}, 
-    { name: 'A4 (Landscape)', width: 8.27, height: 11.69, orientation: 'landscape', mirrorBacksX: false, mirrorBacksY: true}, 
-    { name: 'A4 (Portrait)', width: 8.27, height: 11.69, orientation: 'portrait', mirrorBacksX: true, mirrorBacksY: false}, 
     { name: 'Custom (Landscape)', width: 8.5, height: 11, orientation: 'landscape', mirrorBacksX: false, mirrorBacksY: true}, 
     { name: 'Custom (Portrait)', width: 8.5, height: 11, orientation: 'portrait', mirrorBacksX: true, mirrorBacksY: false}, 
     { name: 'Tabletop Simulator', width: 8.5, height: 11, orientation: 'portrait', mirrorBacksX: false, mirrorBacksY: false}
@@ -50,7 +50,7 @@ export class ExportCardsComponent implements OnInit {
   public paperHeight: number;
   public paperMargins: number = 0.4;
   public paperDpi: number = 300;
-  public cardMargins: number = 0.05;
+  public cardMargins: number = 0.0;
   public cardsPerPage: number = 6;
   public originalCards: Card[] = [];
   public cards: Card[] = [];
@@ -176,8 +176,8 @@ export class ExportCardsComponent implements OnInit {
       this.mirrorBacksX = this.selectedPaper.mirrorBacksX;
       this.mirrorBacksY = this.selectedPaper.mirrorBacksY;
       this.paperMargins = 0.4;
-      this.cardMargins = 0.05;
-      this.cardsPerPage = 6;
+      this.cardMargins = 0.0;
+      this.cardsPerPage = 9;
       this.pixelRatio = 1;
       this.showFront = true;
       this.showBack = true;
